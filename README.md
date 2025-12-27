@@ -3,3 +3,4 @@ I uploaded the LaTeX files of the proof summary to be contributed by students of
 
 Please make a new branch named with the semester (e.g., Fall-2025) and ONLY edit ```main.tex```, all other files are for the LaTeX to work. 
 Please try to follow the same structure to keep the integrity and coherence of the file. 
+Also, after you finish your branch, please upload the rendered PDF for an easy access.
