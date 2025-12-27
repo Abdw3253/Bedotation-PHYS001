@@ -1,0 +1,373 @@
+\documentclass{article}
+\input{structure_defl.tex}
+\usepackage{amsmath, amssymb, fancyhdr,cancel}
+\usepackage{tikz}
+    \usetikzlibrary{arrows,decorations.markings}
+\usepackage[hidelinks]{hyperref}
+%\definecolor{cuBlue}{HTML}{32127A} 
+%\renewcommand{\boxed}[1]{\fcolorbox{cuBlue}{white}{$#1$}}
+\date{2024-2025}
+%\author{\href{https://bedotic.super.site}{Abdelrahman Waleed Ismail}\footnote{For the latest version \& more content like this, visit \href{https://bedotic.super.site}{\textcolor{blue}{bedotic.super.site}} | \href{mailto:abdelrhaman.waleed.3253@gmail.com}{\textcolor{blue}{Abdelrhaman.waleed.3253@gmail.com}}}}
+\title{\textcolor{cBlue}{Summary of Required Proofs for Physics I Exam}\\\textit{PHYS001}}
+
+
+\begin{document}
+ \pagestyle{fancy}
+%\fancyhf{}
+%\fancyhead[L]{\nouppercase{\rightmark\hfill\leftmark}}
+\fancyfoot[L]{\href{https://bedotic.super.site}{Abdelrahman Waleed Ismail}}
+\maketitle
+\tableofcontents
+\section{Elasticity}
+
+%\subsection{Young's Modulus}
+\begin{define}[Young's Modulus]
+\begin{align}
+		\boxed{Y=\frac{F/A_{\perp}}{\Delta L/L_{o}}}
+	\end{align}
+\end{define}
+
+%\subsection{Shear's Modulus}
+
+\begin{define}[Shear's Modulus]
+	\begin{align}
+		\boxed{G=\frac{F/A_{\parallel}}{\Delta x/h}}
+	\end{align}
+\end{define}
+\begin{align}
+\tan(\gamma)=\gamma=\frac{\Delta x}{h} \qquad \tan\theta=\theta\text{, for small } \theta
+\end{align}
+\begin{define}[Bulk's Modulus]
+\begin{align}
+    \boxed{B=-\frac{\Delta P}{\Delta V/V_{o}}}
+\end{align}
+\end{define}
+\section{Gravity}
+\begin{define}[Kepler's Third Law (Orbital Period)]
+    \begin{align}
+    F_g&=ma_r\\
+    \frac{GM\cancel{m}}{r^2}&=\cancel{m}\frac{v^2}{r}\qquad \because v_{orbit}=\frac{2\pi r}T\\
+    \therefore\frac{GM}{r^2}&=\frac{4\pi^2r}{T^2}\implies\boxed{T^2=\frac{4\pi^2}{GM}r^3}\
+    \end{align}
+    $M$ is mass of the planet, $m$ mass of the satellite, $a_r$ centripetal acceleration, $T$ period.
+    \end{define}
+    \begin{define}[Orbital Velocity]
+    \begin{gather}
+    F_g=ma_r\\
+    \frac{GM\cancel{m}}{r^{\cancel{2}}}=\cancel{m}\frac{v^2}{\cancel{r}}\\
+    \boxed{v=\sqrt{\frac{GM}{r}}}
+    \end{gather}
+    \end{define}
+    \begin{define}[Energy in Orbits]
+    \begin{gather}
+        \boxed{U=-\frac{GMm}r},\ \boxed{K.E_{orbit}=\frac12\frac{GMm}r}\\
+         E_{orbit}=KE+U\\
+        \boxed{ E_{orbit}=-\frac12\frac{GMm}r}
+    \end{gather}
+    \end{define}
+    \begin{define}[{Launching \& Escape Velocity}]
+    \textit{This proof is not required. Also, Eq.~\ref{launch} (Launching Velocity) was explained in lecture but we are not sure if it is required.}
+    \begin{gather}
+        U_i+KE_i=U_f\\
+        \frac12\cancel{m}v^2-\frac{GM\cancel{m}}{r_i}=-\frac{GM\cancel{m}}{r_f}\\
+        v=\sqrt{2GM(\frac{1}{r_i}-\frac{1}{r_f})}\\
+        \boxed{v_{r_i\to r_f}=\sqrt{2GM(\frac{r_f-r_i}{r_i\cdot r_f})} }\label{launch}\\
+        \text{for $v_{escape}$, $r_f=\infty$}\implies
+        v_{escape}=\sqrt{2GM(\frac{\cancel{r_f}}{r_i\cdot \cancel{r_f})} }\\
+        \boxed{ v_{escape}=\sqrt{\frac{2GM}{r_i}} }
+    \end{gather}
+   \end{define}
+    \section{Fluid Dynamics}
+    
+    \begin{define}[Flow Rate Equation]
+    \begin{align}
+        \boxed{Q=Av}\label{flow}
+    \end{align}
+    \end{define}
+    \begin{define}[Bernoulli's Equation]
+    \begin{align}
+      \boxed{P+\frac12\rho v^2+\rho gh=\text{Constant}}\label{bern}
+    \end{align}
+    ,where $P$ is the pressure of the fluid, $\rho$ density of the fluid, $h$ difference of height from the initial condition (You can put the line $h=0$ at any level you want).\end{define}
+    For any two points in the same flow of a fluid, these points share the same constant.
+    \begin{define}[{Continuity Equation}]
+    \begin{align}
+        \boxed{A_1v_1=A_2v_2}
+    \end{align}
+    \end{define}
+    \begin{define}[{Torricelli's Approximation}]
+    First, set $h=0$ level at the exit hole level $\implies h_2=0$
+    \begin{align}
+        &\because A_1>>A_2&\therefore v_1=\frac{A_2}{A_1}v_2\approx0\\
+        P_1+&\cancel{\frac12\rho v_1^2}+\rho gh_1=P_2+\frac12\rho v_2^2+\cancel{\rho gh_2}\\
+        v_2&=\sqrt{2(\frac{P_1-P_2+\rho gh_1}{\rho})}=\sqrt{\frac{2\Delta P}\rho+2gh}\\
+        \because&\text{Both holes are subjected to air}&\therefore P_1=P_2=P_0\\
+        &\boxed{v_{2}=\sqrt{2gh}}
+    \end{align}
+    \end{define}
+    \begin{define}[{Venturi-meter}]
+    \begin{align}
+        A_1v_1&=A_2v_2\implies v_1=\frac{A_2}{A_1}v_2\label{eqq}\\
+        P_1+&\frac12\rho v_1^{\phantom{_1}2}+\cancel{\rho gh}=P_2+\frac12\rho v_2^{\phantom{_2}2}+\cancel{\rho gh}\\
+        \Delta P&=\frac12\rho (v_2^{\phantom{_2}2}-v_1^{\phantom{_1}2})& \because Eq.~ \ref{eqq}\\
+        \therefore2\Delta P&=\rho (\frac{A_1^{\phantom{_2}2} v_2^{\phantom{_2}2}-A_2^{\phantom{_2}2}v_2^{\phantom{_2}2}}{A_1^{\phantom{_2}2}})\\
+        &\boxed{v_2=A_1\sqrt{\frac{2\Delta P}{\rho(A_1^{\phantom{_2}2}-A_2^{\phantom{_2}2})}}} &\because Eq.~\ref{flow}
+        \\\therefore\ &\boxed{Q=A_1A_2\sqrt{\frac{2\Delta P}{\rho(A_1^{\phantom{_1}2}-A_2^{\phantom{_2}2})}}}
+    \end{align}
+    \end{define}
+    \begin{define}[{Venturi-meter with monometer}]
+    take two points (A,B) on the same level in each side of monomoter
+    \begin{gather}
+        P_A=P_B,\ v_1=v_2=0\\
+        \rho_{f} gh+P_1=\rho_{Hg}+P_2\\
+        \boxed{\Delta P=(\rho_{Hg}-\rho_{f})gh}
+    \end{gather}
+	\end{define}
+
+    \begin{define}[{Force on Airplane}]
+    Take two points of the same air flow, one above the wing and another one under it
+    \begin{align}
+    P_1+\frac12\rho &v_1^{\phantom{_2}2}+\cancel{\rho gh}= P_2+\frac12\rho v_2^{\phantom{_2}2}+\cancel{\rho gh}& h\approx 0\\
+    &\boxed{\Delta P=\frac12\rho(v_2^{\phantom{_2}2}-v_1^{\phantom{_2}2})}\\
+    &\boxed{F_w=\Delta P\cdot(2A_{wing})}\\
+    \text{No ascending or descending:}\\\sum F_y&=0 \implies F_w-mg=0\\
+    \text{Ascending:}\\
+    \\\sum F_y&=+ma \implies F_w-mg=ma\\
+     \text{Descending:}\\
+    \\\sum F_y&=-ma \implies F_w-mg=-ma
+    \end{align}
+    \end{define}
+    \pagebreak
+        \section{Oscillatory Motion}
+   
+    \begin{define}[{Simple Harmonic Motion}]
+    	 \begin{align}
+    		\boxed{\omega=2\pi f=\frac{2\pi}{T}}
+    	\end{align}
+    \begin{gather}
+        \boxed{\frac{d^2x}{dt^2}=-\omega^2x}\\
+        x(t)=A\cos{(\omega t+\phi)} \quad\text{OR}\quad x(t)=A\sin{(\omega t+\phi)}\\
+        \boxed{|v_{max}|=\omega A} ,\ \boxed{|a_{max}|=\omega^2A}
+    \end{gather}
+    
+    $V_{max}$ is at equilibrium point, while $a_{max}$ at turning points.
+    \begin{subdefine}[{Spring}]
+    \textit{This proof was explained in the lecture, but we are not sure if required}
+    \begin{align}
+        F_s&=ma\\
+        -kx&=m\frac{d^2x}{dt^2}\implies \\
+        &\boxed{w^2=\frac km}
+    \end{align}
+    \end{subdefine}
+    
+    \begin{subdefine}[{Pendulum}]
+    \begin{align}
+        F_t&=ma_t=-mg\sin\theta\\
+        a_t&=L\frac{d^2\theta}{dt^2}=-g\sin\theta \qquad\because \sin\theta=\theta\text{ for small }\theta 
+        \\\therefore &\frac{d^2\theta}{dt^2}=-\frac gL\theta \implies \text{Pendulum for small $\theta$ is performing SMH, }\\&\boxed{w^2=\frac gL}
+        , \ \boxed{\theta(t)=\theta_{max}\cos{(\omega t=\phi)}}
+    \end{align}
+    \end{subdefine}
+
+    \begin{subdefine}[{Energy in Oscillation Motion}]
+    \begin{gather}
+        E=U+KE\\
+        \boxed{\frac12kA^2=\frac12kx^2+\frac12mv^2}
+    \end{gather}
+    \end{subdefine}
+\end{define}
+    \begin{define}[{Wave Motion}]
+   
+    \begin{align}
+        &\boxed{\frac{\partial^2 y}{\partial x^2}=\frac1{v^2}\frac{\partial^2y}{\partial t^2}}\\
+        y(x,t)&=A\sin{(2\pi(\frac x \lambda-\frac tT)+\phi)}\\
+        &\boxed{y(x,t)=A\sin{(kx-\omega t+\phi)}}\\
+        &\boxed{k=\frac{2\pi}\lambda},\ \boxed{\omega=\frac{2\pi}{T}}\\
+        &\boxed{v_{\text{wave speed}} =\lambda f=\frac\omega k}\\
+        v_y&=\frac{\partial y}{\partial t}=\omega A \cos(kx-\omega t)\\
+        a_y&=\frac{\partial^2 y}{\partial t^2}=-\omega^2 A \sin(kx-\omega t)
+        \\&\boxed{|v_{y,\,max}|=A\omega}, \ \boxed{|a_{y,\,max}|=A\omega^2}
+    \end{align}
+    \end{define}
+    
+    \begin{define}[{Wave on a String}]
+    \begin{align}
+        &\boxed{v_{\text{wave speed}}=\sqrt{\frac{T}{\mu}}}\quad \because\mu=\frac mL\\
+        v&=\sqrt{\frac{F}{\frac{m}{L}\cdot\frac{A}{A}}} \qquad \because \frac{F}{A}= Sress, \rho=\frac mV\\
+        &\boxed{v=\sqrt{\frac{Stress}{\rho}}}\\
+        &\boxed{K.E_\lambda=U_\lambda=\frac14\mu\omega^2A^2\lambda},\ \boxed{E_\lambda=\frac12\mu\omega^2A^2\lambda}\\
+        P&=\frac ET=\frac12\mu\omega^2A^2\frac\lambda T
+        \\&\boxed{P=\frac12\mu\omega^2A^2v}
+    \end{align}
+    \end{define}
+    
+    \section{Thermodynamics: Ideal Gases}
+    \begin{align}
+        \boxed{Q=E_{int}+W}\\
+        \boxed{E_{int}=n\frac{fR}{2}\Delta T}
+    \end{align}
+    $f$ is degree of freedom. $f=3$ for monoatomic, while $f=5$ for diatomic.
+    \begin{define}[{Isovolumetric Process}]
+    
+    \begin{gather}
+    dV=0\\
+        W=\int_{V_i}^{V_f} P~dV=0\\ \boxed{Q=E_{int}},\ 
+        \boxed{Q=nC_v\Delta T}
+    \end{gather}
+    \end{define}
+    	\begin{define}[{Isobaric Process}]
+    	\begin{gather}
+    		dP=0\implies \frac{\cancel{nR}T_i}{V_i}=\frac{\cancel{nR}T_f}{V_f}\\
+    		W=\int_{V_i}^{V_f} P~dV=P\int_{V_i}^{V_f}~dV=P\Delta V \qquad \because PV=nRT\\
+    		\therefore\  \boxed{W=nR\Delta T}\label{w.p}\\
+    		dQ=dE_{int}+dW\\
+    		\boxed{nC_p~\Delta T= nC_v~\Delta T+nR~\Delta T}\\
+    		\boxed{C_p=C_v+R},\ \boxed{C_p=\frac{fR+2R}{2}}
+    		\\\boxed{\gamma=\frac{C_v+R}{C_v}=\frac{C_p}{C_v}},\ \boxed{\gamma-1=\frac{R}{C_v}}\label{gamma}
+    	\end{gather}
+    	in Eq.~\ref{w.p} positive sign is used because gas needs more energy to be introduced, i.e., more $Q$.
+    \end{define}
+    
+    \begin{define}[{Isothermal Process}]
+    	\begin{gather}
+    		T_i=T_f\implies E_{int}=0,\ PV=nRT=\text{Constant}\\
+    		\boxed{Q=W}\\
+    		P(V)=\frac{nRT}{V},\  
+    		W=nRT\int_{V_i}^{V_f} \frac1V~dV\\
+    		\boxed{Q=W=nRT\ln{(\frac{V_f}{V_i})}}\label{isothe},\ \boxed{Q=W=PV\ln{(\frac{V_f}{V_i})}}
+    	\end{gather}
+    \end{define}
+    \begin{define}[{Adiabatic Process}]
+    	\begin{align}
+    		dQ&=0\implies dE_{int}+dW=0\\
+    		n&C_v~dT+P~dV=0\qquad \qquad\because PV=nRT\qquad \therefore \cancel{n}C_v~dT+\cancel{n}RT~\frac{dV}V=0\\
+    		&\int_{T_i}^{T_f}\cdot\frac{dT}{T}+\frac{R}{C_v}\int_{V_i}^{V_f}\frac{dV}{V}=0\qquad\because Eq.~\ref{gamma}\\
+    		\therefore\ &\ln{(\frac{T_f}{T_i})(\frac{V_f}{V_i})^{(\gamma-1)}}=0\\
+    		&\boxed{T_fV_f^{(\gamma-1)}=T_iV_i^{(\gamma-1)}}\label{tv} \qquad\because PV=nRT\quad
+    		\therefore\  \frac{P_fV_f}{\cancel{nR}}V_f^{(\gamma-1)}=\frac{P_iV_i}{\cancel{nR}}V_i^{(\gamma-1)}\\
+    		&\boxed{P_fV_f^\gamma=P_iV_i^\gamma=K}\text{ or (using same way) } \boxed{\left(\dfrac{T_i}{T_f}\right)^\gamma=\left(\dfrac{P_i}{P_f}\right)^{\gamma-1}} \\
+    		W&=\int_{V_i}^{V_f}P~dV=K\int_{V_i}^{V_f}V^{-\gamma}~dV\\
+    		&=\frac{K}{1-\gamma}[V_f^{(1-\gamma)}-V_i^{(1-\gamma)}]\quad=\frac{1}{1-\gamma}[(P_fV_f^\gamma )V_f^{(1-\gamma)}-(P_iV_i^\gamma) V_i^{(1-\gamma)}]\\
+    		&\boxed{W=\frac{P_iV_i-P_fV_f}{\gamma-1}}
+    	\end{align}
+    \end{define}
+    \begin{define}[Engines]
+    \begin{align}
+        \boxed{W=\sum Q=Q_H+Q_C}\\
+        \boxed{\eta=\frac{W}{Q_H}=\frac{Q_H+Q_C}{Q_H}=1-\frac{|Q_C|}{Q_H}} 
+    \end{align}
+    $Q_H$ is heat entering (Hot) , $Q_C$ is heat getting out (Cold).
+    \begin{subdefine}[{Carnot's Cycle}]
+    Carnot's Cycle contains 2 adiabatic (cb \& ad) and 2 isothermal processes (ba \& dc).\\
+    \begin{center}
+            \begin{tikzpicture}[
+          > = latex,
+          dot/.style = {draw,fill,circle,inner sep=1pt},
+          arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+          ]
+          
+          %\draw[<->] (0,6) node[above right] {$P$} |- (6,0) node[right] {$V$};
+          %\draw[->] (0,0) node[above] {$P$} %|- (6,0) node[right] {$V$};
+          \draw[->] (0,0) -- (6,0) node[right]{$V$};
+          \draw[->] (0,0) -- (0,6) node[left]{$P$};
+          \node[dot,label={right:$a$}] (@a) at (5,4) {};
+          \node[dot,label={left:$b$}] (@b) at (1.5,4.5) {};
+          \node[dot,label={below left:$c$}] (@c) at (2,1.5) {};
+          \node[dot,label={right:$d$}] (@d) at (5.5,1) {};
+          \draw[arrow inside] (@b) to[looseness=.7,bend right=20] (@a);
+          \draw[arrow inside] (@c) to[looseness=.7,bend left=20] (@b);
+          \draw[arrow inside] (@d) to[looseness=.7,bend left=20] (@c);
+          \draw[arrow inside] (@a) to[looseness=.7,bend right=20] (@d);
+          \draw[dashed] (@a) to [left] (0,4);
+          \draw[dashed] (@c) to [left] (0,1.5);
+          \draw (-.98,4.0) node {$P_1$};
+          \draw (-.98,1.5) node {$P_2$};
+        \end{tikzpicture}
+    \end{center}
+    \noindent \textit{Adiabatic paths:}
+    \begin{align}
+    T_HV_a^{\gamma-1}&=T_CV_d^{\gamma-1} \ / \ T_HV_b^{\gamma-1}=T_CV_c^{\gamma-1}\\
+    \frac{V_a}{V_b}&=\frac{V_d}{V_c}
+    \end{align}
+    \textit{Isothermal paths:}
+    \begin{align}
+    Q_H&=nRT_H\ln{\frac{V_a}{V_b}}\\ |Q_C|&=-nRT_C\ln{\frac{V_c}{V_d}}=nRT_C\ln{\frac{V_d}{V_c}}\\
+    \eta&=1-\frac{|Q_C|}{Q_H}=1-\frac{\cancel{nR}T_H\cancel{\ln{\frac{V_a}{V_b}}}}{\cancel{nR}T_C\cancel{\ln{\frac{V_d}{V_c}}}}
+        \\&\boxed{\eta_{carnot}=1-\frac{T_C}{T_H}}
+    \end{align}
+    $T_C$ Cold Temperature (getting out), $T_H$ Hot temperature entering.
+    $$\eta\leq\eta_{carnot}$$ because $\eta_{carnot}$ is the maximum efficiency.
+    \end{subdefine}
+    \end{define}
+    
+    \begin{definel}[Continue: Engines]
+    \begin{subdefine}[{Otto's Cycle}]
+    Otto's cycle contains 2 adiabatic (ba \& dc) and 2 isovolumetric processes (ad \& bc).
+    \textbf{Two} Volumes only 
+    \begin{center}
+      \begin{tikzpicture}[
+    	> = latex,
+    	dot/.style = {draw,fill,circle,inner sep=1pt},
+    	arrow inside/.style = {postaction=decorate,decoration={markings,mark=at position .55 with \arrow{>}}}
+    	]
+    	
+    	%\draw[<->] (0,6) node[above right] {$P$} |- (6,0) node[right] {$V$};
+    	%\draw[->] (0,0) node[above] {$P$} %|- (6,0) node[right] {$V$};
+    	\draw[->] (0,0) -- (6,0) node[right]{$V$};
+    	\draw[->] (0,0) -- (0,6) node[left]{$P$};
+    	\node[dot,label={right:$a$}] (@a) at (5,2) {};
+    	\node[dot,label={left:$b$}] (@b) at (1.5,5) {};
+    	\node[dot,label={below left:$c$}] (@c) at (1.5,2) {};
+    	\node[dot,label={right:$d$}] (@d) at (5,1) {};
+    	\draw[arrow inside] (@b) to[looseness=.7,bend right=40] (@a);
+    	\draw[arrow inside] (@c) to[looseness=.7,bend left=0] (@b);
+    	\draw[arrow inside] (@d) to[looseness=.7,bend left=40] (@c);
+    	\draw[arrow inside] (@a) to[looseness=.7,bend right=0] (@d);
+    	\draw[dashed] (@a) to [left] (5,0);
+    	\draw[dashed] (@c) to [left] (1.5,0);
+    	\draw (1.5,-.58) node {$V_2=V_0$};
+    	\draw (5,-.58) node {$V_1=xV_0$};
+    \end{tikzpicture}
+    \end{center}
+              
+    \begin{gather}
+            \frac{1}{x}=\frac{V_c}{V_d}=\frac{V_b}{V_a}\\
+    \eta=1-(\frac{V_c}{V_d})^{\gamma-1}=1-(\frac{V_b}{V_a})^{\gamma-1}, \qquad T_aV_a^{\gamma-1}=T_bV_b^{\gamma-1}\\
+    \boxed{\eta=1-\frac1{x^{\gamma-1}}=1-\frac{T_d}{T_c}=1-\frac{T_a}{T_b}}
+    \end{gather}
+    a way to remember which temperature points to use. Take one adiabatic path and get two points, one with high $V$ and one with low $V$. The temperature of the high volume divided the temperature of the low volume.
+    \end{subdefine}
+    \end{definel}
+    \begin{define}[{Entropy}]
+    \begin{gather}
+        \boxed{dS=\frac{dQ}{T}}\\
+        Q=\int T~dS\implies Q=\text{Area under $T-S$ diagram}\\
+        \end{gather}
+        \begin{definel}[{General:}]
+        \begin{gather}
+            dQ=mC~dT\implies
+            S=\int_{T_i}^{T_f}\frac{mC}{T}~dT\\
+            \boxed{S=mC\ln{\frac{T_f}{T_i}}}
+        \end{gather}
+        \end{definel}
+        \begin{definel}[{Ideal Gasses Entropy}]
+        \textit{Isothermal:}
+        \begin{align}
+            \boxed{S=\frac{Q}{T}}
+        \end{align}
+        \textit{Isovolumetric:}
+        \begin{gather}
+            S=\int_{T_i}^{T_f}\frac{nC_v}{T}~dT\\
+        \boxed{S=nC_v\ln{\frac{T_f}{T_i}} }
+        \end{gather}
+        \textit{Isobaric:}
+        \begin{align}
+                    \boxed{S=nC_p\ln{\frac{T_f}{T_i}}}
+        \end{align}
+        \textit{Adiabatic:}
+        \begin{align}
+                   \boxed {S=0}
+        \end{align}
+        \end{definel}
+		\end{define}
+\end{document}
